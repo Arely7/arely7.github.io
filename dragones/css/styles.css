@@ -81,14 +81,14 @@ section#home > .centrar > div > .button{
     transition: 0.2 ease-in all;
     border: 1px solid var(--button);
 }
-section#especies > h1{
+.titulo{
     font-size: x-large;
     font-weight: bold;
     padding-top: 30px;
     width: 100%;
     text-align: center;
 }
-section#especies > .cuadros{
+.cuadros{
     display: flex;
     gap: 30px;
     width: (100%-30px);
@@ -111,7 +111,7 @@ section#especies > .cuadros > .especie{
 section#especies > .cuadros > .especie > p{
     font-size:large;
 }
-section#especies > .cuadros > .especie > .ver{
+.ver{
     background-color: var(--cuadroe);
     text-align: center;
     border: 1px solid var(--borde);
@@ -124,4 +124,20 @@ img#d{
     width: 250px;
     height: 250px;
     border-radius: 500px;
+}
+.mision{
+    background-color: var(--cuadroe);
+    width: 40%;
+    height: 400px;
+    border-radius: 10px;
+    border: 1px solid var(--borde);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+img#m{
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
 }
