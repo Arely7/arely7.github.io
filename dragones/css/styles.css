@@ -108,7 +108,7 @@ section#especies > .cuadros > .especie{
     gap: 10px;
     align-items: center;
 }
-section#especies > .cuadros > .especie > p{
+.t{
     font-size:large;
 }
 .ver{
@@ -128,7 +128,7 @@ img#d{
 .mision{
     background-color: var(--cuadroe);
     width: 40%;
-    height: 400px;
+    height: 420px;
     border-radius: 10px;
     border: 1px solid var(--borde);
     padding: 30px;
