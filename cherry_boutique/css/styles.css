@@ -1,0 +1,29 @@
+:root{
+    --bg: #FFF8FA;
+    --blanco: #FFFFFF;
+    --rosa: #F113A3;
+    --guinda: #3A1C1C;
+    --cu: #FFEBF5;
+    --linea: #FCE6E8;
+    --footer: #333333;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.bg{
+    background-color: var(--bg);
+}
+.rosa{
+    color: var(--rosa);
+}
+header{
+    width: 100%;
+    height: 70px;
+}
+.cherry{
+    font-size: 2rem;
+}
+.boutique{
+    font-size: 15px;
+}
