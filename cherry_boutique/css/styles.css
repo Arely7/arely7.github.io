@@ -18,12 +18,31 @@
     color: var(--rosa);
 }
 header{
-    width: 100%;
+    width: 100% - 60%;
     height: 70px;
+    padding: 10px 30px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
 }
 .cherry{
     font-size: 2rem;
 }
 .boutique{
     font-size: 15px;
+}
+.menu2{
+    display: flex;
+    gap: 30px;
+}
+.m1{
+    list-style: none;
+}
+.ic{
+    padding: 10px;
+}
+#nosotros{
+    background-image: url(../img/Nosotross.jpeg);
+    background-size: 100% 100%;
+    height: 700px;
 }
