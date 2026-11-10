@@ -7,6 +7,13 @@ body{
     color: #333;
     font-family: "Arial";
 }
+.hero{
+    height: 350px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
 header{
     display: flex;
     justify-content: space-between;
