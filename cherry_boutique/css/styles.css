@@ -6,6 +6,7 @@
     --cu: #FFEBF5;
     --linea: #FCE6E8;
     --footer: #333333;
+    --buscar: #FFF0F4;
 }
 *{
     margin: 0px;
@@ -38,7 +39,6 @@ header{
     justify-content: space-between;
     display: flex;
 }
-/*Index 1*/
 .cherry{
     font-size: 2rem;
 }
@@ -55,6 +55,30 @@ header{
 .ic{
     padding: 10px;
 }
+/*Index 2*/
+#colecciones{
+    background-image: url(../img/Colecciones.jpeg);
+    background-size: 100% 100%;
+    height: 700px;
+}
+.cl{
+    font-size: 5rem;
+}
+.encuentra{
+    font-size: large;
+}
+.buscar{
+    border-radius: 30px;
+    width: 300px;
+    height: 40px;
+    background-color: var(--buscar);
+    display: flex;
+    align-items: center;
+    gap: 130px;
+    font-weight: thin;
+    padding: 15px;
+}
+/*Index 4*/
 #nosotros{
     background-image: url(../img/Nosotross.jpeg);
     background-size: 100% 100%;
@@ -187,7 +211,7 @@ h1, h2, h3{
     padding: 30px 100px;
 }
 .ut{
-    width: 40%;
+    width: 30%;
     text-align: left;
 }
 .ua{
@@ -197,7 +221,10 @@ h1, h2, h3{
 .reg{
     font-size: 1.3rem;
 }
+
 /*Index 4*/
+
+/*Index 3*/
 
 .hero{
     min-height: 300px;
