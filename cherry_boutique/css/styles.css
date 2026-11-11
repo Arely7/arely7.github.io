@@ -14,6 +14,9 @@
 .bg{
     background-color: var(--bg);
 }
+.blanco{
+    color: var(--blanco);
+}
 .cu{
     background-color: var(--cu);
 }
@@ -34,6 +37,7 @@ header{
     justify-content: space-between;
     display: flex;
 }
+/*Index 1*/
 .cherry{
     font-size: 2rem;
 }
@@ -80,6 +84,109 @@ header{
 .icono{
     font-size: 50px;
 }
+#comunidad{
+    background-image: url(../img/Comunidad.jpeg);
+    background-size: 100% 100%;
+    height: 700px;
+}
+.ce{
+    padding: 0px 30px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.unete{
+    font-size: 4rem;
+}
+.btnunir{
+    border-radius: 30px;
+    width: 200px;
+    height: 40px;
+    background-color: var(--rosa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: large;
+}
+#puntos{
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    background-color: var(--bg);
+}
+.como{
+    flex: 1.3;
+}
+.cf{
+    font-size: x-large;
+}
+.beneficios{
+    flex: 1;
+    border-left: 1px solid var(--guinda);
+    padding-left: 30px;
+}
+.pasos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+    text-align: center;
+}
+.listabeneficios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+.circulo{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: var(--cu);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 10px;
+}
+.n{
+    font-weight: bold;
+}
+.circulo > i{
+    font-size: 40px;
+}
+.beneficio > .circulo{
+    width: 65px;
+    height: 65px;
+}
+.beneficio > .circulo > i{
+    font-size: 25px;
+}
+#unete{
+    background-image: url(../img/Club.jpeg);
+    background-size: 100% 100%;
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 600px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 100px;
+}
+.ut{
+    width: 40%;
+    text-align: left;
+}
+.ua{
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+.reg{
+    font-size: 1.3rem;
+}
+/*Index 4*/
 .hero{
     height: 350px;
     background-image: linear-gradient(rgba(255,240,245,.75),
