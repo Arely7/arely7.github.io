@@ -7,6 +7,7 @@
     --linea: #FCE6E8;
     --footer: #333333;
     --buscar: #FFF0F4;
+    --negro: #000000;
 }
 *{
     margin: 0px;
@@ -27,6 +28,9 @@
 }
 .rosa{
     color: var(--rosa);
+}
+.negro{
+    color: var(--negro);
 }
 body{
     background-color: var(--bg);
@@ -552,9 +556,77 @@ hr{
     align-items: center;
     font-size: 35px;
 }
+<<<<<<< Updated upstream
 .success-texto{ max-width: 420px;}
 .success-texto h2{ font-size: 1.8rem; margin-bottom: 15px;}
 .destacado{font-weight: 500; margin-bottom: 15px; font-size: 1rem;}
+=======
+/*Index 1*/
+#inicio{
+    background-image: url(../img/principal.png);
+    background-size: 100% 100%;
+    height: 700px;
+}
+.ini{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 80px;
+    height: 100%;
+}
+.inicont{
+    width: 45%;
+}
+.sub{
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    color: var(--guinda);
+    text-transform: uppercase;
+}
+.tit{
+    font-size: 3.5rem;
+    margin: 20px 0;
+    color: var(--negro);
+}
+.resaltar{
+    color: var(--rosa);
+}
+.descrip{
+    font-size: 1rem;
+    color: var(--negro);
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+.btncomprar{
+    border-radius: 30px;
+    width: 200px;
+    height: 40px;
+    background-color: var(--rosa);
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: large;
+    cursor: pointer;
+}
+.imgini{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.gvo{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 100px;
+}
+
+
+
+
+>>>>>>> Stashed changes
 footer{
     background: var(--footer);
     color: white;
