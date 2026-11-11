@@ -42,6 +42,7 @@ header{
     align-items: center;
     justify-content: space-between;
     display: flex;
+    cursor: pointer;
 }
 .cherry{
     font-size: 2rem;
