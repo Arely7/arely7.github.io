@@ -83,6 +83,11 @@ header{
     font-weight: thin;
     padding: 15px;
 }
+#categorias{
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
 /*Index 4*/
 #nosotros{
     background-image: url(../img/Nosotross.jpeg);
