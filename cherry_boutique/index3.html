@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
-    <header>
+<body class="index3">
+    <header class="index3header">
         <div class="titulo">
             <h2 class="cherry rosa">Cherry</h2>
             <h4 class="boutique">BOUTIQUE</h4>
@@ -76,7 +76,12 @@
                 <input type="text" placeholder="Código postal">
                 <input type="text" placeholder="Estado">
             </div>
-            <h2>Método de envío</h2>
+            <div class="titulo-seccion">
+                <i class="fa-solid fa-box-open"></i>
+                <div>
+                    <h2>Método de envío</h2>
+                    <p>Elige la opción que prefieras.</p>
+                </div>
             <div class="envío">
                 <div class="envío-card">
                     <i class="fa-solid fa-truck"></i>
@@ -84,67 +89,122 @@
                     <p>3 - 5 Días hábiles</p>
                     <strong>$99 MXN</strong>
                 </div>
-                <div class="envío-card">
+                <div class="opción-card">
                     <i class="fa-solid fa-shop"></i>
                     <h4>Recoger en tienda</h4>
                     <p>Nuevo Casas Grandes</p>
                     <strong>Sin costo</strong>
                 </div>
-                <div class="envío-card">
+                <div class="opción-card">
                     <i class="fa-solid fa-truck-fast"></i>
                     <h4>Envío express</h4>
                     <p>1 - 2 días hábiles</p>
                     <strong>$149 MXN</strong>
                 </div>
             </div>
-            <h2>Método de pago</h2>
-            <div class="pago">
-                <div class="pago-card">
+            <div class="titulo-seccion">
+                <i class="fa-regular fa-credit-card"></i>
+            </div>
+                <div>
+                    <h2>Método de pago</h2>
+                    <p>Selecciona tu forma de pago</p>
+                </div>
+            </div>
+            <div class="opciones">
+                <div class="opcion-card">
                     <i class="fa-regular fa-credit-card"></i>
                     Tarjeta de crédito o débito
                 </div>
-                <div class="pago-card">
+                <div class="opcion-card">
                     <i class="fa-solid fa-building-columns"></i>
                     Transferencia bancaria
                 </div>
-                <div class="pago-card">
+                <div class="opcion-card">
                     <i class="fa-solid fa-money-bill"></i>
                     Pago en efectivo
                 </div>
             </div>
             <div class="cupon">
-                <h3>¿Tienes un cupón de descuento?</h3>
-                Ingresa tu código aquí (opcional)
-                <input type="text" placeholder="Código">
-                <button>Aplicar</button>
+                <i class="fa-solid fa-ticket"></i>
+                <div class="cupon-info">
+                    <h3>¿Tienes un cupón de descuento?</h3>
+                    <p>Ingresa tu código aquí (opcional)</p>
+                    <div class="cupon-form">
+                        <input type="text" aria-label="Código de cupón">
+                        <button type="button">Aplicar</button>
+                    </div>
+                </div>
             </div>
-            <button class="btn-pagar">
-                Pagar
-            </button>
+            <div class="pagar-wrap">
+                <button type="button" class="btn-pagar">Pagar</button>
+            </div>
         </section>
+        <div class="columna-derecha">
+            <section class="carrito">
+                <h2>Productos en tu carrito (3)</h2>
+                <div class="producto">
+                    <img src="img/Bolsanegra.png" alt="Bolsa bandolera">
+                    <div class="producto-info">
+                        <h4>Bolsa bandolera</h4>
+                        <p>Color: <span class="color" style="background:#000"></span></p>
+                        <p class="precio">$649 MXN</p>
+                        <div class="cantidad"><button type="button">-</button><span>1</span><button type="button">+</button></div>
+                    </div>
+                </div>
+
+                <div class="producto">
+                    <img src="img/Tenis2.png" alt="Tenis clásicos">
+                    <div class="producto-info">
+                        <h4>Tenis clásicos</h4>
+                        <p>Color: <span class="color" style="background: #fff;"></span></p>
+                        <p>Talla: 24</p>
+                        <p class="precio">$799 MXN</p>
+                        <div class="cantidad"><button type="button">-</button><span>1</span><button type="button">+</button></div>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="img/Blusarosa1.png" alt="Top con moño">
+                    <div class="producto-info">
+                        <h4>Top con moño</h4>
+                        <p>Color: <span class="color" style="background: #F113A3;"></span></p>
+                        <p>Tala: M</p>
+                        <p class="precio">$399 MXN</p>
+                        <div class="cantidad"><button type="button">-</button><span>1</span><button type="button">+</button></div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="seguir">
+                    <a href="#" class="btn-seguir"><i class="fa-solid fa arrow-left"></i> Seguir comprando</a>
+                </div>
+            </section>
+        </div>
 
         <aside class="resumen">
             <h2>Resumen de pedido</h2>
-            <div class="producto">
+            <div class="item-resumen">
                 <img src="img/Bolsanegra.png" alt="">
-                <div>
+                <div class="detalle">
                     <h4>Bolsa bandolera</h4>
-                    <p>$649 MXN</p>
+                    <p class="precio">$649 MXN</p>
                 </div>
+                <span>1</span>
             </div>
-            <div class="producto">
+            <div class="item-resumen">
                 <img src="img/Tenis2.png" alt="">
-                <div>
+                <div class="detalle">
                     <h4>Tenis clásicos</h4>
                     <p>$799 MXN</p>
                 </div>
+                <span>1</span>
             </div>
-            <div class="producto">
+            <div class="item-resumen">
                 <img src="img/Blusarosa1.png" alt="">
-                <div>
+                <div class="detalle">
                     <h4>Top con moño</h4>
                     <p>$399 MXN</p>
                 </div>
+                <span>1</span>
             </div>
 
             <hr>
@@ -153,6 +213,10 @@
                 <p>Subtotal: $1847 MXN</p>
                 <p>Envío: $99 MXN</p>
                 <h3>Total: $1946 MXN</h3>
+            </div>
+            <div class="seguro">
+                <h4 class="rosa">Tus datos están protegidos</h4>
+                <p><i class="fa-solid fa-lock rosa"></i>Usamos encriptación SSl para garantizar tu información</p>
             </div>
         </aside>
     </main>
@@ -163,7 +227,7 @@
         </div>
         <div>
             <h2>¡Pedido en camino!</h2>
-            <p>Tu compra ha sido realizada con éxito</p>
+            <p class="destacado">Tu compra ha sido realizada con éxito</p>
             <p>Hemos enviado un correo con los detalles
                 de tu pedido y el número de seguimiento
             </p>
@@ -172,18 +236,30 @@
 
     <footer>
         <div class="logo">
-            Cherry Boutique
+            <h2 class="rosa">Cherry</h2>
+            <h4>BOUTIQUE</h4>
+            <p>Tu estilo, nuestra inspiración</p>
         </div>
         <div>
             <h4>Enlaces</h4>
             <p>Inicio</p>
             <p>Colecciones</p>
             <p>Compras</p>
+            <p>Nosotros</p>
         </div>
         <div>
             <h4>Contacto</h4>
-            <p>636 XXX XX XX</p>
-            <p>hola@cherryboutique.com</p>
+            <p><i class="fa-solid fa-phone"></i>636 XXX XX XX</p>
+            <p><i class="fa-regular fa-envelope"></i>hola@cherryboutique.com</p>
+            <p><i class="fa-solid fa-location-dot"></i>Nuevo Casas Grandes, Chih.</p>
+        </div>
+        <div>
+            <h4>Síguenos</h4>
+            <p class="redes">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-tiktok"></i>
+                <i class="fa-brands fa-facebook"></i>
+            </p>
         </div>
     </footer>
     </body>
