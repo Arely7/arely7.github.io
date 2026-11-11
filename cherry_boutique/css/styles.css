@@ -85,7 +85,6 @@ header{
 .icono{
     font-size: 50px;
 }
-<<<<<<< HEAD
 .index3{
     background-color: var(--bg);
     color: var(--guinda);
@@ -96,9 +95,6 @@ h1, h2, h3{
     font-family: 'Playfair Display', serif;
     font-weight: 500;
 }
-.index3header{
-    padding: 15px;
-=======
 #comunidad{
     background-image: url(../img/Comunidad.jpeg);
     background-size: 100% 100%;
@@ -202,18 +198,7 @@ h1, h2, h3{
     font-size: 1.3rem;
 }
 /*Index 4*/
-.hero{
-    height: 350px;
-    background-image: linear-gradient(rgba(255,240,245,.75),
-    rgba(255,240,245,.75)),
-    url("../img/banner.jpg");
-    background-size: cover;
->>>>>>> 5eb81cf207bb7b6262983cef179a9b1f66e9db24
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--bg);
-}
+
 .hero{
     min-height: 300px;
     background-color: var(--cu);
@@ -227,15 +212,15 @@ h1, h2, h3{
     align-items: center;
     padding: 50px 60px;
 }
-.hero h1{
-    font-size: 2.6;
-    margin: 15px 0;
-    line-height: 1.15;
-}
 .hero h3{
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1.1rem;
+}
+.hero h1{
+    font-size: 2.6rem;
+    margin: 15px 0;
+    line-height: 1.15;
 }
 .hero h1 span{
     display: block;
@@ -300,6 +285,44 @@ h1, h2, h3{
     flex-direction: column;
     gap: 20px;
 }
+.titulo-seccion{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 25px 0 15px;
+}
+.titulo-seccion:frist-child{margin-top: 0;}
+.titulo-seccion > i{
+    color: var(--rosa);
+    font-size: 1.6rem;
+}
+.titulo-seccion h2{font-size: 1rem;}
+.titulo-seccion p{font-size: .7rem;}
+.formulario h3{
+    font-family: 'Inter', sans-serif;
+    font-size: .85rem;
+    font-weight: 600;
+    margin: 20px 0 5px;
+}
+label{
+    display: block;
+    font-size: .8rem;
+    margin-top: 12px;
+}
+label b{ color: var(--rosa); font-weight: 400;}
+input[type="text"],
+input[type="tel"],
+input[type="email"]{
+    width: 100%;
+    height: 36px;
+    padding: 0 12px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 6px;
+    background: var(--blanco);
+}
 .grid-2{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -310,50 +333,17 @@ h1, h2, h3{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
 }
-input{
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    margin: 10px 0;
-}
-.envío,
-.pago{
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-.envío-card,
-.pago-card{
-    flex: 1;
-    background: white;
-    text-align: center;
-    padding: 20px;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    font-size: .8rem;
-}
-.envío-card i,
-.pago-card i{
-    color: var(--rosa);
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-.envío-card h4,
-.pago-card h4{
-    font-weight: 500;
-    font-size: .8rem;
-}
-.envío-card p,
-.pago-card p{
-    font-size: .8rem;
-}
 .check-fact{margin-top: 20px;}
 .check-fact input{ margin-right: 6px; accent-color: var(--rosa);}
 .opciones{
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.opciones > .opcion-card{
+    flex: 1 1 0;
+    min-width: 150px;
 }
 .opcion-card{
     flex: 1;
@@ -366,7 +356,8 @@ input{
     font-size: .8rem;
 }
 .opcion-card:hover{ border-color: var(--rosa);}
-.opcion card i{
+.opcion-card i{
+    display: block;
     color: var(--rosa);
     font-size: 1.3rem;
     margin-bottom: 10px;
