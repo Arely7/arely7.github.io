@@ -226,13 +226,11 @@ h1, h2, h3{
 
 /*Index 3*/
 
-.hero{
+#hero{
     min-height: 300px;
     background-color: var(--cu);
     height: 350px;
-    background-image: linear-gradient(rgba(255,240,245,.6),
-    rgba(255,240,245,.6)),
-    url("../img/banner.jpg");
+    background-image:url("../img/banner.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -313,8 +311,6 @@ h1, h2, h3{
     gap: 20px;
 }
 .titulo-seccion{
-    display: flex;
-    align-items: flex-start;
     gap: 12px;
     flex: 0 0 100%;
     width: 100%;
@@ -367,6 +363,7 @@ input[type="email"]{
     gap: 15px;
     flex-wrap: wrap;
     width: 100%;
+    margin: 25px 0 15px
 }
 .opciones > .opcion-card{
     flex: 1 1 0;
@@ -539,7 +536,7 @@ hr{
     align-items: center;
     gap: 30px;
     background-color: var(--cu);
-    background-image: url("../img/banner.png");
+    background-image:url("../img/banner2.png");
     background-size: cover;
     background-position: center;
 }
