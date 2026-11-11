@@ -556,11 +556,10 @@ hr{
     align-items: center;
     font-size: 35px;
 }
-<<<<<<< Updated upstream
+
 .success-texto{ max-width: 420px;}
 .success-texto h2{ font-size: 1.8rem; margin-bottom: 15px;}
 .destacado{font-weight: 500; margin-bottom: 15px; font-size: 1rem;}
-=======
 /*Index 1*/
 #inicio{
     background-image: url(../img/principal.png);
@@ -622,11 +621,6 @@ hr{
     right: 0;
     width: 100px;
 }
-
-
-
-
->>>>>>> Stashed changes
 footer{
     background: var(--footer);
     color: white;
