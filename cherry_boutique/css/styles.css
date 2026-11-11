@@ -88,6 +88,42 @@ header{
     display: flex;
     justify-content: space-around;
 }
+#look{
+    padding: 30px;
+}
+#look h2{
+    margin: 0;
+}
+#look > p{
+    margin: 0 0 20px;
+}
+.lista-looks{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+}
+.look{
+    border-radius: 10px;
+    overflow: hidden;
+}
+.look img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.pie{
+    background-color: var(--cu);
+    padding: 15px;
+}
+.pie p{
+    background-color: var(--linea);
+    color: var(--rosa);
+    text-align: center;
+    padding: 18px;
+    border-radius: 30px;
+    margin: 0;
+}
 /*Index 4*/
 #nosotros{
     background-image: url(../img/Nosotross.jpeg);
