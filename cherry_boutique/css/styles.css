@@ -124,6 +124,8 @@ header{
     border-radius: 30px;
     margin: 0;
 }
+
+/*Index 2*/
 /*Index 4*/
 #nosotros{
     background-image: url(../img/Nosotross.jpeg);
@@ -267,9 +269,7 @@ h1, h2, h3{
 .reg{
     font-size: 1.3rem;
 }
-
 /*Index 4*/
-
 /*Index 3*/
 
 #hero{
@@ -663,6 +663,7 @@ hr{
     right: 0;
     width: 100px;
 }
+/*Index 3*/
 footer{
     background: var(--footer);
     color: white;
