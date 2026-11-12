@@ -88,6 +88,16 @@ header{
     display: flex;
     justify-content: space-around;
 }
+.circulo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--cu);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
 #looks{
     padding: 30px;
 }
