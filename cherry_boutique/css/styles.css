@@ -11,6 +11,10 @@
     --rosa2: #FFB6E1;
     --rosa3: #F0B0B0;
     --cafe: #9B3D3D;
+    --rosab: #FFB5E7;
+    --rosaba: #FFDFEF;
+    --cla: #FFE6E6;
+
 }
 *{
     margin: 0px;
@@ -76,6 +80,15 @@
 }
 .col.negro{
     background-color: var(--negro);
+}
+.rosab-bg{
+    background-color: var(--rosab);
+}
+.rosaba-bg{
+    background-color: var(--rosaba);
+}
+.cla-bg{
+    background-color: var(--cla);
 }
 body{
     background-color: var(--bg);
@@ -878,6 +891,89 @@ hr{
     color: var(--rosa);
     margin-left: 5px;
 }
+#destacados{
+    padding: 40px 80px 70px 80px;
+}
+.encdes{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+.subsecc{
+    font-size: 1rem;
+    color: var(--negro);
+}
+.vertodo{
+    color: var(--rosa);
+    text-decoration: none;
+    font-weight: 500;
+}
+.gdest{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.prodcard{
+    background-color: var(--cu);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.prodcard > i{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--negro);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+.imgprod{
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin: 15px 0;
+}
+.prodnom{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.prodpre{
+    font-size: 0.9rem;
+    color: var(--negro);
+    margin: 5px 0 10px 0;
+}
+.colores{
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.puntorosaosc, .puntorosacla, .puntoblanco, .puntocafe, .puntonegro{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.puntorosaosc{background-color: var(--rosa);}
+.puntorosacla{background-color: var(--rosab);}
+.puntoblanco{background-color: var(--blanco);}
+.puntocafe{background-color: var(--cafe);}
+.puntonegro{background-color: var(--negro);}
+
+.btncarrito{
+    background-color: var(--rosa);
+    color: var(--blanco);
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+
 
 /*Index 3*/
 footer{
