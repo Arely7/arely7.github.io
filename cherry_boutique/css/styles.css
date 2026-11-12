@@ -8,6 +8,9 @@
     --footer: #333333;
     --buscar: #FFF0F4;
     --negro: #000000;
+    --rosa2: #FFB6E1;
+    --rosa3: #F0B0B0;
+    --cafe: #9B3D3D;
 }
 *{
     margin: 0px;
@@ -20,24 +23,67 @@
 .blanco{
     color: var(--blanco);
 }
+.buscar{
+    color: var(--buscar);
+}
+.cafe{
+    color: var(--cafe);
+}
 .cu{
     background-color: var(--cu);
+}
+.footer{
+    color: var(--footer);
 }
 .guinda{
     color: var(--guinda);
 }
-.rosa{
-    color: var(--rosa);
+.linea{
+    color: var(--linea);
 }
 .negro{
     color: var(--negro);
 }
+.rosa{
+    color: var(--rosa);
+}
+.rosa2{
+    color: var(--rosa2);
+}
+.rosa3{
+    color: var(--rosa3);
+}
+.rosa-bg{
+    background-color: var(--rosa);
+}
+.guinda-bg{
+    background-color: var(--guinda);
+}
+.blanco-bg{
+    background-color: var(--blanco);
+}
+.linea-bg{
+    background-color: var(--linea);
+}
+.rosa2-bg{
+    background-color: var(--rosa2);
+}
+.rosa3-bg{
+    background-color: var(--rosa3);
+}
+.cafe-bg{
+    background-color: var(--cafe);
+}
+.col.negro{
+    background-color: var(--negro);
+}
 body{
     background-color: var(--bg);
+    font-family: 'Inter', sans-serif;
 }
 header{
     width: 100% - 60%;
-    height: 50px;
+    height: 60px;
     padding: 10px 30px;
     align-items: center;
     justify-content: space-between;
@@ -72,7 +118,7 @@ header{
 .encuentra{
     font-size: large;
 }
-.buscar{
+.buscador{
     border-radius: 30px;
     width: 300px;
     height: 40px;
@@ -83,18 +129,143 @@ header{
     font-weight: thin;
     padding: 15px;
 }
+.buscador > p{
+    opacity: 0.6;
+}
 #categorias{
     padding: 30px;
     display: flex;
     justify-content: space-around;
 }
-#look{
+.circulo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--cu);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+#catalogo{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+}
+.lado{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.filtros{
+    background-color: var(--cu);
+    padding: 20px;
+    border-radius: 15px;
+}
+.filtros > h3{
+    color: var(--guinda);
+    font-weight: normal;
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--linea);
+    margin: 0 0 10px;
+}
+.filtros > h4{
+    margin: 15px 0 5px;
+}
+.filtros > label{
+    display: block;
+}
+.globos{
+    width: 100%;
+    flex: 1;
+    min-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.colores{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+.col{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.filtros > .col{
+    width: 22px;
+    height: 22px;
+}
+.mas{
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+.barra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.barra > select{
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--footer);
+    background-color: var(--bg);
+}
+.lista{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+}
+.foto{
+    position: relative;
+    background-color: var(--linea);
+    border-radius: 10px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.foto > img{
+    max-width: 80%;
+    max-height: 90%;
+}
+.corazon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+}
+.nom{
+    font-size: 0.8rem;
+    margin: 8px 0 0;
+}
+.prod > .colores{
+    margin-top: 8px;
+}
+.tallas{
+    font-size: 0.7rem;
+    margin: 8px 0;
+}
+.btn{
+    width: 100%;
+    background-color: var(--rosa);
+    color: var(--blanco);
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+#looks{
     padding: 30px;
 }
-#look h2{
+#looks h2{
     margin: 0;
 }
-#look > p{
+#looks > p{
     margin: 0 0 20px;
 }
 .lista-looks{
@@ -105,16 +276,19 @@ header{
 .look{
     border-radius: 10px;
     overflow: hidden;
+    background-color: var(--rosa2);
 }
 .look img{
     width: 100%;
     height: 220px;
     object-fit: cover;
     display: block;
+    cursor: pointer;
 }
 .pie{
-    background-color: var(--cu);
+    background-color: var(--rosa2);
     padding: 15px;
+    cursor: pointer;
 }
 .pie p{
     background-color: var(--linea);
@@ -124,6 +298,7 @@ header{
     border-radius: 30px;
     margin: 0;
 }
+/*Index 2*/
 /*Index 4*/
 #nosotros{
     background-image: url(../img/Nosotross.jpeg);
@@ -267,11 +442,8 @@ h1, h2, h3{
 .reg{
     font-size: 1.3rem;
 }
-
 /*Index 4*/
-
 /*Index 3*/
-
 #hero{
     min-height: 300px;
     background-color: var(--cu);
@@ -302,27 +474,29 @@ h1, h2, h3{
     max-width: 280px;
     font-size: .85rem;
 }
-.pasos{
+.pasos-check{
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 40px, 60px;
+    padding: 40px 30px;
 }
-.pasos::before{
+.pasos-check::before{
     content: "";
     position: absolute;
-    top: 59px;
-    left: 80px;
-    right: 80px;
+    top: 60px;
+    left: 30px;
+    right: 30px;
     height: 1px;
     background: var(--linea);
 }
-.paso{
+.paso-check{
     position: relative;
+    z-index: 1;
     text-align: center;
     min-width: 80px;
+    background: var(--bg);
 }
-.paso span{
+.paso-check span{
     width: 40px;
     height: 40px;
     display: flex;
@@ -333,7 +507,7 @@ h1, h2, h3{
     background: var(--rosa);
     color: white;
 }
-.paso p{
+.paso-check p{
     margin-top: 8px;
     font-size: .75rem;
 }
@@ -663,6 +837,7 @@ hr{
     right: 0;
     width: 100px;
 }
+/*Index 3*/
 footer{
     background: var(--footer);
     color: white;
