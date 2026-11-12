@@ -972,7 +972,116 @@ hr{
     font-size: 0.9rem;
     cursor: pointer;
 }
-
+#club{
+    background-image: url(../img/Club.jpeg);
+    background-size: 100% 100%;
+    height: 550px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 100px;
+}
+.ut{
+    width: 40%;
+}
+.cherryrosa{
+    font-size: 3rem;
+    color: var(--rosa);
+    margin-bottom: 15px;
+}
+.texp{
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.texs{
+    font-size: 1rem;
+    color: var(--negro);
+    margin-bottom: 25px;
+}
+.btnunir{
+    border-radius: 30px;
+    width: 180px;
+    height: 45px;
+    background-color: var(--rosa);
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#benef{
+    padding: 50px 80px;
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+    text-align: center;
+}
+#benef > .titsec{
+    margin-bottom: 40px;
+}
+.gbenef{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.benefit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.benefit > i{
+    font-size: 2rem;
+    color: var(--rosa);
+}
+.benefit > p{
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+#insta{
+    padding: 50px 80px 70px 80px;
+}
+.titinsta{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+.titsecins{
+    font-size: 2rem;
+}
+.subsecins{
+    font-size: 1rem;
+    color: var(--negro);
+}
+.btninsta{
+    background-color: var(--rosa);
+    color: var(--blanco);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.ginsta{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+.instacard{
+    border-radius: 10px;
+    overflow: hidden;
+}
+.imginsta{
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
 
 
 /*Index 3*/
