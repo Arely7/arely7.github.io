@@ -789,17 +789,21 @@ hr{
 .success-texto{ max-width: 420px;}
 .success-texto h2{ font-size: 1.8rem; margin-bottom: 15px;}
 .destacado{font-weight: 500; margin-bottom: 15px; font-size: 1rem;}
+
+
 /*Index 1*/
 #inicio{
     background-image: url(../img/principal.png);
     background-size: 100% 100%;
-    height: 700px;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 100%;
 }
 .ini{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 80px;
+    padding: 0px 60px 0px 80px;
     height: 100%;
 }
 .inicont{
@@ -846,27 +850,34 @@ hr{
 }
 .gvo{
     position: absolute;
-    top: 10px;
-    right: 0;
-    width: 100px;
+    top: 40px;
+    right: -10px;
+    width: 105px;
 }
 #categorias{
     padding: 50px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .titsec{
     font-size: 2rem;
     color: var(--negro);
+    display: block;
+    width: 100%;
     margin-bottom: 5px;
 }
 .subsec{
     font-size: 1rem;
     color: var(--negro);
+    display: block;
+    width: 100%;
     margin-bottom: 35px;
 }
 .gcat{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 100px;
     text-align: center;
 }
 .circat{
@@ -888,6 +899,7 @@ hr{
     font-weight: 500;
 }
 .flecha{
+    display: block;
     color: var(--rosa);
     margin-left: 5px;
 }
