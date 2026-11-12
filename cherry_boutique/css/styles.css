@@ -88,7 +88,7 @@ header{
     display: flex;
     justify-content: space-around;
 }
-#look{
+#looks{
     padding: 30px;
 }
 #look h2{
@@ -111,10 +111,12 @@ header{
     height: 220px;
     object-fit: cover;
     display: block;
+    cursor: pointer;
 }
 .pie{
     background-color: var(--cu);
     padding: 15px;
+    cursor: pointer;
 }
 .pie p{
     background-color: var(--linea);
