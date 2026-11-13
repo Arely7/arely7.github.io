@@ -11,6 +11,10 @@
     --rosa2: #FFB6E1;
     --rosa3: #F0B0B0;
     --cafe: #9B3D3D;
+    --rosab: #FFB5E7;
+    --rosaba: #FFDFEF;
+    --cla: #FFE6E6;
+
 }
 *{
     margin: 0px;
@@ -76,6 +80,15 @@
 }
 .col.negro{
     background-color: var(--negro);
+}
+.rosab-bg{
+    background-color: var(--rosab);
+}
+.rosaba-bg{
+    background-color: var(--rosaba);
+}
+.cla-bg{
+    background-color: var(--cla);
 }
 body{
     background-color: var(--bg);
@@ -776,17 +789,21 @@ hr{
 .success-texto{ max-width: 420px;}
 .success-texto h2{ font-size: 1.8rem; margin-bottom: 15px;}
 .destacado{font-weight: 500; margin-bottom: 15px; font-size: 1rem;}
+
+
 /*Index 1*/
 #inicio{
     background-image: url(../img/principal.png);
     background-size: 100% 100%;
-    height: 700px;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 100%;
 }
 .ini{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 80px;
+    padding: 0px 60px 0px 80px;
     height: 100%;
 }
 .inicont{
@@ -833,10 +850,252 @@ hr{
 }
 .gvo{
     position: absolute;
-    top: 10px;
-    right: 0;
-    width: 100px;
+    top: 40px;
+    right: -10px;
+    width: 105px;
 }
+#categorias{
+    padding: 50px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.titsec{
+    font-size: 2rem;
+    color: var(--negro);
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.subsec{
+    font-size: 1rem;
+    color: var(--negro);
+    display: block;
+    width: 100%;
+    margin-bottom: 35px;
+}
+.gcat{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 100px;
+    text-align: center;
+}
+.circat{
+    width: 200px;
+    height: 200px;
+    background-color: var(--cu);
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circat > img{
+    width: 130px;
+    height: auto;
+}
+.catcarta > p{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.flecha{
+    display: block;
+    color: var(--rosa);
+    margin-left: 5px;
+}
+#destacados{
+    padding: 40px 80px 70px 80px;
+}
+.encdes{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+.subsecc{
+    font-size: 1rem;
+    color: var(--negro);
+}
+.vertodo{
+    color: var(--rosa);
+    text-decoration: none;
+    font-weight: 500;
+}
+.gdest{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.prodcard{
+    background-color: var(--cu);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.prodcard > i{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--negro);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+.imgprod{
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin: 15px 0;
+}
+.prodnom{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.prodpre{
+    font-size: 0.9rem;
+    color: var(--negro);
+    margin: 5px 0 10px 0;
+}
+.colores{
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.puntorosaosc, .puntorosacla, .puntoblanco, .puntocafe, .puntonegro{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.puntorosaosc{background-color: var(--rosa);}
+.puntorosacla{background-color: var(--rosab);}
+.puntoblanco{background-color: var(--blanco);}
+.puntocafe{background-color: var(--cafe);}
+.puntonegro{background-color: var(--negro);}
+
+.btncarrito{
+    background-color: var(--rosa);
+    color: var(--blanco);
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+#club{
+    background-image: url(../img/Club.jpeg);
+    background-size: 100% 100%;
+    height: 550px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 100px;
+}
+.ut{
+    width: 40%;
+}
+.cherryrosa{
+    font-size: 3rem;
+    color: var(--rosa);
+    margin-bottom: 15px;
+}
+.texp{
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.texs{
+    font-size: 1rem;
+    color: var(--negro);
+    margin-bottom: 25px;
+}
+.btnunir{
+    border-radius: 30px;
+    width: 180px;
+    height: 45px;
+    background-color: var(--rosa);
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#benef{
+    padding: 50px 80px;
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+    text-align: center;
+}
+#benef > .titsec{
+    margin-bottom: 40px;
+}
+.gbenef{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.benefit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.benefit > i{
+    font-size: 2rem;
+    color: var(--rosa);
+}
+.benefit > p{
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+#insta{
+    padding: 50px 80px 70px 80px;
+}
+.titinsta{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+.titsecins{
+    font-size: 2rem;
+}
+.subsecins{
+    font-size: 1rem;
+    color: var(--negro);
+}
+.btninsta{
+    background-color: var(--rosa);
+    color: var(--blanco);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.ginsta{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+.instacard{
+    border-radius: 10px;
+    overflow: hidden;
+}
+.imginsta{
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+
 /*Index 3*/
 footer{
     background: var(--footer);
