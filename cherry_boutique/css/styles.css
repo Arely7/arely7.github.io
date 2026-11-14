@@ -352,6 +352,9 @@ header{
 .icono{
     font-size: 50px;
 }
+.cr{
+    font-weight: bold;
+}
 .index3{
     background-color: var(--bg);
     color: var(--guinda);
