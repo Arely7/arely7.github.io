@@ -14,7 +14,6 @@
     --rosab: #FFB5E7;
     --rosaba: #FFDFEF;
     --cla: #FFE6E6;
-
 }
 *{
     margin: 0px;
@@ -94,6 +93,7 @@ body{
     background-color: var(--bg);
     font-family: 'Inter', sans-serif;
 }
+/*Header*/
 header{
     width: 100% - 60%;
     height: 60px;
@@ -117,8 +117,9 @@ header{
     list-style: none;
 }
 .ic{
-    padding: 10px;
+    padding: 15px;
 }
+/*Header*/
 /*Index 2*/
 #colecciones{
     background-image: url(../img/Colecciones.jpeg);
@@ -241,6 +242,14 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.cz-col{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: var(--rosa);
+    cursor: pointer;
 }
 .foto > img{
     max-width: 80%;
@@ -411,14 +420,14 @@ h1, h2, h3{
     text-align: center;
 }
 .circulo{
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: var(--cu);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--cu);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
 }
 .n{
     font-weight: bold;
@@ -789,8 +798,7 @@ hr{
 .success-texto{ max-width: 420px;}
 .success-texto h2{ font-size: 1.8rem; margin-bottom: 15px;}
 .destacado{font-weight: 500; margin-bottom: 15px; font-size: 1rem;}
-
-
+/*Index 3*/
 /*Index 1*/
 #inicio{
     background-image: url(../img/principal.png);
@@ -941,6 +949,9 @@ hr{
     color: var(--negro);
     cursor: pointer;
     font-size: 1.1rem;
+}
+.cz {
+    color: var(--rosa) !important;
 }
 .imgprod{
     width: 100%;
@@ -1094,9 +1105,7 @@ hr{
     object-fit: cover;
     display: block;
 }
-
-
-/*Index 3*/
+/*Index 1*/
 footer{
     background: var(--footer);
     color: white;
