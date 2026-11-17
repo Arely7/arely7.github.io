@@ -997,6 +997,7 @@ hr{
     border-radius: 25px;
     font-size: 0.9rem;
     cursor: pointer;
+    border-color: #F113A3;
 }
 #club{
     background-image: url(../img/Club.jpeg);
@@ -1117,4 +1118,7 @@ footer{
     gap: 20px;
     padding: 40px;
     font-size: .75rem;
+}
+footer > .enlaces > a{
+    display: block;
 }
