@@ -1,0 +1,92 @@
+/*Tablet*/
+@media (max-width: 992px){
+    /*Header*/
+    header{
+        flex: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    /*Portada*/
+    .center, .ce{
+        width: 100%;
+        padding: 0 30px;
+    }
+    #club .ut{
+        width: 60%;
+    }
+    #unete .ut{
+        width: 50%;
+    }
+    #unete, #club{
+        padding: 30px;
+    }
+
+    /*Inicio*/
+    .ini{
+        padding: 0 30px;
+    }
+    .inicont{
+        width: 70%;
+    }
+    .imgini{
+        display: none;
+    }
+    #categorias2, #destacados, #benef, #insta{
+        padding: 40px 30px;
+    }
+    .gcat{
+        gap: 30px;
+    }
+    .circat{
+        width: 150px;
+        height: 150px;
+    }
+    .gdest{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gbenef{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ginsta{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*Colecciones*/
+    #catalogo{
+        grid-template-columns: 1fr;
+    }
+    .globos{
+        min-height: 250px;
+        max-height: 300px;
+    }
+    .lista{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .lista-looks{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /*Comprar*/
+    .checkout{
+        grid-template-columns: 1fr;
+    }
+
+    /*Nosotros*/
+    #historia{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #puntos{
+        flex-direction: column;
+    }
+    .beneficios{
+        border-left: none;
+        padding-left: 0;
+    }
+
+    /*Footer*/
+    footer{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 30px;
+    }
+}
