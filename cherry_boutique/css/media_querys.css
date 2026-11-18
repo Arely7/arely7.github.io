@@ -90,3 +90,176 @@
         gap: 30px;
     }
 }
+
+/*Celular*/
+
+@media(max-width: 600px){
+    /*Header y menú*/
+    header{
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+    .menu2{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px 20px;
+    }
+    .menu2 a{
+        display: inline-block;
+        padding: 10px 5 px;
+    }
+
+    /*Portada*/
+    .cl{
+        font-size: 3rem;
+    }
+    .grande{
+        font-size: 2rem;
+    }
+    .nsts{
+        font-size: 1.5rem;
+    }
+    .unete{
+        font-size: 2rem;
+    }
+    .centrar, .ce{
+        padding: 30px 20px;
+    }
+    #club .ut, #unete .ut{
+        width: 100%;
+    }
+    #unete, #club{
+        padding: 30px 20px;
+    }
+    #hero{
+        padding: 40px 20px;
+    }
+    #hero h1{
+        font-size: 2rem;
+    }
+
+    /*Inicio*/
+    .inicont{
+        width: 100%;
+    }
+    .tit{
+        font-size: 2.3rem;
+    }
+    #categorias2, #destacados, #benef, #insta{
+        padding: 30px 20px;
+    }
+    .gcat{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    circat{
+        width: 130px;
+        height: 130px;
+    }
+    .circat > img{
+        width: 80px;
+    }
+    .gdest{
+        grid-template-columns: 1fr;
+    }
+    .gbenef{
+        grid-template-columns: 1fr 1fr;
+    }
+    .encdes, titinsta{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .ginsta{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /*Colecciones*/
+    #categorias{
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+    #catalogo{
+        padding: 20px;
+    }
+    .lista{
+        grid-template-columns: 1fr;
+    }
+    .lista-looks{
+        grid-template-columns: 1fr;
+    }
+    .barra{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .buscador{
+        max-width: 100%;
+    }
+
+    /*Comprar*/
+    .pasos-check{
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        padding: 20px 15px;
+    }
+    .pasos-check::before{
+        display: none;
+    }
+    .checkout{
+        padding: 15px;
+    }
+    .grid-2, .grid-3{
+        grid-template-columns: 1fr;
+    }
+    .opciones{
+        flex-direction: column;
+    }
+    .cupon{
+        flex-direction: column;
+    }
+    .cupon-form{
+        flex-wrap: wrap;
+    }
+    .success{
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    /*Nosotros*/
+    #historia{
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    #puntos{
+        padding: 20px;
+    }
+    .pasos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .listabeneficios{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /*Botones*/
+    .btn, .btncarrito, .btn-pagar, .btnunir, .btncomprar, .btninsta{
+        min-height: 44px;
+    }
+    .cantidad button{
+        min-width: 32px;
+        min-height: 32px;
+    }
+    .opcion-card{
+        min-width: 0;
+    }
+
+    /*Footer*/
+    footer{
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    
+}
