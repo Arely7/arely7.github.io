@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Colecciones de Cherry Boutique: ropa, zapatos, bolsas y accesorios para mujeres auténticas">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/media_querys.css">
@@ -24,10 +25,10 @@
                 </ul>
             </nav>
         </div>
-        <div>
-            <a href="index2.html"><i class="fa fa-magnifying-glass ic"></i></a>
-            <a href="index2.html"><i class="fa fa-heart ic"></i></a>
-            <a href="index3.html"><i class="fa fa-bag-shopping ic"></i></a>
+        <div class="iconos">
+            <a href="index2.html" aria-label="Buscar productos"><i class="fa fa-magnifying-glass ic"></i></a>
+            <a href="index2.html" aria-label="Ver favoritos"><i class="fa fa-heart ic"></i></a>
+            <a href="index3.html" aria-label="Ver carrito"><i class="fa fa-bag-shopping ic"></i></a>
         </div>
     </header>
     <section id="colecciones">
@@ -91,13 +92,13 @@
                 <label><input type="checkbox">$1,000.00-$1,499.00</label>
                 <label><input type="checkbox">$1,500.00+</label>
             </div>
-            <img class="globos" src="img/Rectangle24.png">
+            <img class="globos" src="img/Rectangle24.png" alt="Bolsa de regalo con globos rosa">
         </div>
         <div class="productos">
             <div class="barra">
                 <div>
-                    <label>Ordenar por:</label>
-                    <select>
+                    <label for="orden">Ordenar por:</label>
+                    <select id="orden">
                         <option>Más nuevos</option>
                         <option>Precio: menor a mayor</option>
                         <option>Precio: mayor a menor</option>
@@ -109,7 +110,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Blusarosa.png">
+                        <img src="img/Blusarosa.png" alt="Top con moño">
                     </div>
                     <p class="nom">Top con moño</p>
                     <p class="nom">$399.00 MXN</p>
@@ -124,7 +125,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Bolsablanca.png">
+                        <img src="img/Bolsablanca.png" alt="Bolsa blanca">
                     </div>
                     <p class="nom">Bolsa blanca</p>
                     <p class="nom">$699.00 MXN</p>
@@ -139,7 +140,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Chamarranegra.png">
+                        <img src="img/Chamarranegra.png" alt="Chamarra de piel negra">
                     </div>
                     <p class="nom">Chamarra de piel</p>
                     <p class="nom">$1,299.00 MXN</p>
@@ -154,7 +155,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Conjuntobeige.png">
+                        <img src="img/Conjuntobeige.png" alt="Conjunto de lino">
                     </div>
                     <p class="nom">Conjunto de lino</p>
                     <p class="nom">$899.00 MXN</p>
@@ -169,7 +170,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Lentes.png">
+                        <img src="img/Lentes.png" alt="Lentes de sol">
                     </div>
                     <p class="nom">Lentes de sol</p>
                     <p class="nom">$499.00 MXN</p>
@@ -183,7 +184,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Falda.png">
+                        <img src="img/Falda.png" alt="Falda">
                     </div>
                     <p class="nom">Falda</p>
                     <p class="nom">$549.00 MXN</p>
@@ -198,7 +199,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Bolsanegra1.png">
+                        <img src="img/Bolsanegra1.png" alt="Bolsa bandolera">
                     </div>
                     <p class="nom">Bolsa bandolera</p>
                     <p class="nom">$649.00 MXN</p>
@@ -213,7 +214,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Vestido.png">
+                        <img src="img/Vestido.png" alt="Vestido mini">
                     </div>
                     <p class="nom">Vestido mini</p>
                     <p class="nom">$799.00 MXN</p>
@@ -228,7 +229,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Tenis.png">
+                        <img src="img/Tenis.png" alt="Tenis clásicos">
                     </div>
                     <p class="nom">Tenis clásicos</p>
                     <p class="nom">$799.00 MXN</p>
@@ -243,7 +244,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Tacones.png">
+                        <img src="img/Tacones.png" alt="Tacones">
                     </div>
                     <p class="nom">Tacones</p>
                     <p class="nom">$899.00 MXN</p>
@@ -258,7 +259,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Sueter.png">
+                        <img src="img/Sueter.png" alt="Suéter tejido">
                     </div>
                     <p class="nom">Suéter tejido</p>
                     <p class="nom">$699.00 MXN</p>
@@ -272,7 +273,7 @@
                 <div class="prod">
                     <div class="foto">
                         <i class="fa-regular fa-heart cz-col"></i>
-                        <img src="img/Conjuntonegro.png">
+                        <img src="img/Conjuntonegro.png" alt="Conjunto elegante">
                     </div>
                     <p class="nom">Conjunto elegante</p>
                     <p class="nom">$1,099.00 MXN</p>

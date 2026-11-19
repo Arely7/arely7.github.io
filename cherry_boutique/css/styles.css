@@ -112,11 +112,22 @@ header{
     display: flex;
     gap: 30px;
 }
+.menu2 a{
+    display: inline-block;
+    padding: 12px 8px;
+}
 .m1{
     list-style: none;
 }
-.ic{
-    padding: 15px;
+.iconos a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+}
+.iconos ic{
+    padding: 0;
 }
 /*Header*/
 /*Index 2*/
@@ -348,6 +359,9 @@ header{
 }
 .his{
     padding: 30px;
+}
+.his ul{
+    padding-left: 20px;
 }
 .icono{
     font-size: 50px;
