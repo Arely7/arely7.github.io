@@ -398,7 +398,7 @@ h1, h2, h3{
     align-items: center;
     justify-content: center;
     gap: 5px;
-    font-size: large;
+    font-size: medium;
 }
 #puntos{
     padding: 30px;
