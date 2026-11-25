@@ -1,14 +1,23 @@
+<?php session_start();
+include "./php/conexion.php";
+include "./php/seguridad.php";
+?>
 <!DOCTYPE html>
-<html lang="ens">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Conoce la historia, misión y valores de Cherry Boutique y únete a Cherry Club.">
     <title>Nosotros</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/media_querys.css">
+    <link rel="stylesheet" href="./css/extra.css">
 </head>
+
 <body>
     <header>
         <div class="titulo">
@@ -18,17 +27,25 @@
         <div class="menu">
             <nav>
                 <ul class="menu2">
-                    <li class="m1"><a href="index1.html">Inicio</a></li>
-                    <li class="m1"><a href="index2.html">Colecciones</a></li>
-                    <li class="m1"><a href="index3.html">Comprar</a></li>
-                    <li class="rosa m1"><a href="index4.html">Nosotros</a></li>
+                    <li class="m1"><a href="index1.php">Inicio</a></li>
+                    <li class="m1"><a href="index2.php">Colecciones</a></li>
+                    <li class="m1"><a href="index3.php">Comprar</a></li>
+                    <li class="rosa m1"><a href="index4.php">Nosotros</a></li>
                 </ul>
             </nav>
         </div>
         <div class="iconos">
-            <a href="index2.html" aria-label="Buscar productos"><i class="fa fa-magnifying-glass ic"></i></a>
-            <a href="index2.html" aria-label="Ver favoritos"><i class="fa fa-heart ic"></i></a>
-            <a href="index3.html" aria-label="Ver carrito"><i class="fa fa-bag-shopping ic"></i></a>
+            <a href="index2.php" aria-label="Buscar productos"><i class="fa fa-magnifying-glass ic"></i></a>
+            <a href="index2.php" aria-label="Ver favoritos"><i class="fa fa-heart ic"></i></a>
+            <a href="index3.php" aria-label="Ver carrito"><i class="fa fa-bag-shopping ic"></i></a>
+            <?php if (estaLogueado()) { ?>
+                <a href="dash.php" aria-label="Mi cuenta" title="<?php echo e($_SESSION['userData']['name']); ?>"><i
+                        class="fa fa-user ic"></i></a>
+                <a href="php/logout.php" aria-label="Cerrar sesión" title="Cerrar sesión"><i
+                        class="fa fa-right-from-bracket ic"></i></a>
+            <?php } else { ?>
+                <a href="login.php" aria-label="Iniciar sesión" title="Iniciar sesión"><i class="fa fa-user ic"></i></a>
+            <?php } ?>
         </div>
     </header>
     <section id="nosotros">
@@ -114,14 +131,15 @@
             <div>
                 <p class="rosa">CHERRY CLUB</p>
                 <h2 class="unete">Únete a nuestra<br><span class="rosa">comunidad exclusiva</span></h2>
-                <p>Cherry Club es más que un programa de puntos, es una forma de agradecerte por ser parte de esta familia.</p>
+                <p>Cherry Club es más que un programa de puntos, es una forma de agradecerte por ser parte de esta
+                    familia.</p>
                 <p>Aquí encontrarás beneficios, sorpresas y muchas formas de consentirte.</p>
-                <a href="#puntos" class="btnunir">
+                <a href="<? echo estaLogueado() ? '#puntos' : 'registro.php'; ?>" class="btnunir">
                     <span class="blanco">Unirme a Cherry Club</span>
                     <i class="fa fa-arrow-right blanco"></i>
                 </a>
             </div>
-            
+
         </div>
     </section>
     <section id="puntos">
@@ -212,6 +230,17 @@
         <div class="ut">
             <h2 class="ua">¡Únete ahora!</h2>
             <p class="reg">Regístrate en Cherry Club y comienza a disfrutar todos los beneficios.</p>
+            <?php
+            $nClientas = $conexion->query("SELECT COUNT(*) FROM CLIENTES")->fetch_row()[0];
+            $nProductos = $conexion->query("SELECT COUNT(*) FROM PRODUCTOS")->fetch_row()[0];
+            $nCats = $conexion->query("SELECT COUNT(*) FROM CATEGORIAS")->fetch_row()[0];
+            ?>
+            <p class="reg"><b><?php echo $nClientas; ?></b>clientas ya forman parte de la comunidad ·
+                <b><?php echo $nProductos; ?></b>productos en <b> <?php echo $nCats; ?></b> categorías</p>
+            <?php if (estaLogueado()) { ?>
+                <a href="registro.php" class="btnunir"><span class="blanco">Crear mi cuenta</span><i
+                        class="fa fa-arrow-right blanco"></i></a>
+            <?php } ?>
         </div>
     </section>
     <footer>
@@ -222,10 +251,10 @@
         </div>
         <div class="enlaces">
             <h3>Enlaces</h3>
-            <a href="index1.html">Inicio</a>
-            <a href="index2.html">Colecciones</a>
-            <a href="index3.html">Comprar</a>
-            <a href="index4.html">Nosotros</a>
+            <a href="index1.php">Inicio</a>
+            <a href="index2.php">Colecciones</a>
+            <a href="index3.php">Comprar</a>
+            <a href="index4.php">Nosotros</a>
         </div>
         <div>
             <h3>Contacto</h3>
@@ -243,4 +272,5 @@
         </div>
     </footer>
 </body>
+
 </html>

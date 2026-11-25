@@ -379,7 +379,7 @@ h1, h2, h3{
     height: 700px;
 }
 .ce{
-    padding: 0px 30px;
+    padding: 0px 30px; 
     width: 40%;
     height: 100%;
     display: flex;
