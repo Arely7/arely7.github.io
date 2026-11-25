@@ -1,14 +1,24 @@
+<?php session_start();
+include "./php/conexion.php";
+include "./php/seguridad.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cherry Boutique: moda y accesorios para mujeres auténticas. Tu estilo, nuestra inspiración.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta name="description"
+        content="Cherry Boutique: moda y accesorios para mujeres auténticas. Tu estilo, nuestra inspiración.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/media_querys.css">
+    /* */
     <title>Inicio</title>
 </head>
+
 <body>
     <header>
         <div class="titulo">
@@ -18,17 +28,26 @@
         <div class="menu">
             <nav>
                 <ul class="menu2">
-                    <li class="rosa m1"><a href="index1.html">Inicio</a></li>
-                    <li class="m1"><a href="index2.html">Colecciones</a></li>
-                    <li class="m1"><a href="index3.html">Comprar</a></li>
-                    <li class="m1"><a href="index4.html">Nosotros</a></li>
+                    <li class="rosa m1"><a href="index1.php">Inicio</a></li>
+                    <li class="m1"><a href="index2.php">Colecciones</a></li>
+                    <li class="m1"><a href="index3.php">Comprar</a></li>
+                    <li class="m1"><a href="index4.php">Nosotros</a></li>
                 </ul>
             </nav>
         </div>
         <div class="iconos">
-            <a href="index2.html" aria-label="Buscar productos"><i class="fa fa-magnifying-glass ic negro"></i></a>
-            <a href="index2.html" aria-label="Ver favoritos"><i class="fa fa-heart ic negro"></i></a>
-            <a href="index3.html" aria-label="Ver carrito"><i class="fa fa-bag-shopping ic negro"></i></a>
+            <a href="index2.php" aria-label="Buscar productos"><i class="fa fa-magnifying-glass ic negro"></i></a>
+            <a href="index2.php" aria-label="Ver favoritos"><i class="fa fa-heart ic negro"></i></a>
+            <a href="index3.php" aria-label="Ver carrito"><i class="fa fa-bag-shopping ic negro"></i></a>
+            <?php if (estaLogueado()) { ?>
+                <a href="dash.php" aria-label="Mi cuenta" title="<?php echo e($_SESSION['userData']['name']); ?>"><i
+                        class="fa fa-user ic negro"></i></a>
+                <a href="php/logout.php" aria-label="Cerrar sesión" title="Cerrar sesión"><i
+                        class="fa fa-right-from-bracket ic negro"></i></a>
+            <?php } else { ?>
+                <a href="login.php" aria-label="Iniciar sesión" title="Iniciar sesión"><i
+                        class="fa fa-user ic negro"></i></a>
+            <?php } ?>
         </div>
     </header>
     <section id="inicio">
@@ -49,40 +68,25 @@
             <div class="imgini">
                 <img src="./img/Goodvibesonly.png" alt="Good vibes only" class="gvo">
             </div>
-        </main>  
-    </section>  
+        </main>
+    </section>
     <section id="categorias2">
         <h2 class="titsec">Categorías</h2>
         <p class="subsec">Encuentra lo que va contigo</p>
-        
+
         <div class="gcat">
-            <a href="index2.html" class="catcarta">
-                <div class="circat">
-                    <img src="./img/blu1.png" alt="">
-                </div>
-                <p>Ropa <span class="flecha">→</span></p>
-            </a>
-
-            <a href="index2.html" class="catcarta">
-                <div class="circat">
-                    <img src="./img/te1.png" alt="">
-                </div>
-                <p>Zapatos <span class="flecha">→</span></p>
-            </a>
-
-            <a href="index2.html" class="catcarta">
-                <div class="circat">
-                    <img src="./img/bol1.png" alt="">
-                </div>
-                <p>Bolsas <span class="flecha">→</span></p>
-            </a>
-
-            <a href="index2.html" class="catcarta">
-                <div class="circat">
-                    <img src="./img/acc1.png" alt="">
-                </div>
-                <p>Accesorios <span class="flecha">→</span></p>
-            </a>
+            <?php
+            $imgCat = [1 => 'blu1.png', 2 => 'te1.png', 3 => 'bol1.png', 4 => 'acc1.png'];
+            $rc = $conexion->query("SELECT ID_CATEGORIA, NOMBRE_CATEGORIA FROM CATEGORIAS WHERE ID_CATEGORIA <= 4 ORDER BY ID_CATEGORIA");
+            while ($c = $rc->fetch_assoc()) { ?>
+                <a href="index2.php?cat[]=<?php echo $c['ID_CATEGORIA']; ?>" class="catcarta">
+                    <div class="circat">
+                        <img src="./img/ <?php echo $imgCat[$c['ID_CATEGORIA']] ?? 'blu1.png'; ?>"
+                            alt="<?php echo e($c['NOMBRE_CATEGORIA']); ?> ">
+                    </div>
+                    <p><?php echo e($c['NOMBRE_CATEGORIA']); ?> <span class="flecha">→</span></p>
+                </a>
+            <?php } ?>
         </div>
     </section>
 
@@ -92,74 +96,37 @@
                 <h2 class="titsec">Productos destacados</h2>
                 <p class="subsecc">Los favoritos de nuestra comunidad</p>
             </div>
-            <a href="index2.html" class="vertodo">Ver todo</a>
+            <a href="index2.php" class="vertodo">Ver todo</a>
         </div>
 
         <div class="gdest">
-            <div class="prodcard">
-                <i class="fa-regular fa-heart cz"></i>
-                <img src="./img/bol1d.png" alt="Bolsa de mano rosa" class="imgprod">
-                <h3 class="prodnom">Bolsa Cherry</h3>
-                <p class="prodpre">$599.00 MXN</p>
-                <div class="colores">
-                    <span class="puntorosaosc"></span>
-                    <span class="puntorosacla"></span>
-                    <span class="puntoblanco"></span>
+            <?php
+            $rd = $conexion->query("SELECT * FROM PRODUCTOS WHERE DESTACADO = 1 ORDER BY ID_PRODUCTO LIMIT 4");
+            while ($p = $rd->fetch_assoc()) { ?>
+                <div class="prodcard">
+                    <i class="fa-regular fa-heart cz"></i>
+                    <img src="./img/ <?php echo e($p['IMAGEN']); ?>" alt="<?php echo e($p['NOMBRE']); ?>" class="imgprod">
+                    <h3 class="prodnom"><?php echo e($p['NOMBRE']); ?> </h3>
+                    <p class="prodpre"><?php echo dinero($p['PRECIO']); ?> </p>
+                    <div class="colores">
+                        <span class="<?php echo claseColorInicio($p['COLOR']); ?>"></span>
+                    </div>
+                    <button class="btncarrito" type="button" onclick="location='index3.php'">Agregar al carrito</button>
                 </div>
-                <button class="btncarrito">Agregar al carrito</button>
-            </div>
-
-            <div class="prodcard">
-                <i class="fa-regular fa-heart cz"></i>
-                <img src="./img/top1d.png" alt="Top básico blanco" class="imgprod">
-                <h3 class="prodnom">Top básico</h3>
-                <p class="prodpre">$349.00 MXN</p>
-                <div class="colores">
-                    <span class="puntorosaosc"></span>
-                    <span class="puntocafe"></span>
-                    <span class="puntoblanco"></span>
-                </div>
-                <button class="btncarrito">Agregar al carrito</button>
-            </div>
-
-            <div class="prodcard">
-                <i class="fa-regular fa-heart cz"></i>
-                <img src="./img/pant1d.png" alt="Pantalón negro de pierna ancha" class="imgprod">
-                <h3 class="prodnom">Pantalón Wide Leg</h3>
-                <p class="prodpre">$699.00 MXN</p>
-                <div class="colores">
-                    <span class="puntocafe"></span>
-                    <span class="puntonegro"></span>
-                    <span class="puntoblanco"></span>
-                </div>
-                <button class="btncarrito">Agregar al carrito</button>
-            </div>
-
-            <div class="prodcard">
-                <i class="fa-regular fa-heart cz"></i>
-                <img src="./img/te1d.png" alt="Tenis blancos" class="imgprod">
-                <h3 class="prodnom">Tenis clásicos</h3>
-                <p class="prodpre">$799.00 MXN</p>
-                <div class="colores">
-                    <span class="puntoblanco"></span>
-                    <span class="puntonegro"></span>
-                    <span class="puntocafe"></span>
-                </div>
-                <button class="btncarrito">Agregar al carrito</button>
-            </div>
+            <?php } ?>
         </div>
     </section>
+
     <section id="club">
         <div class="ut">
             <h2 class="cherryrosa">Cherry Club</h2>
             <p class="texp">Más que una tienda, una comunidad.</p>
             <p class="texs">Únete a nuestro club y disfruta de beneficios <br>
-            exclusivos, descuentos especiales y muchas<br>
-            sorpresas más. 
+                exclusivos, descuentos especiales y muchas<br>
+                sorpresas más.
             </p>
-            <a href="index4.html" class="btnunir">Únete ahora<i class="fa fa-arrow-right"></i></a>
-    
-            </div>
+            <a href="index4.php" class="btnunir">Únete ahora<i class="fa fa-arrow-right"></i></a>
+        </div>
         </div>
     </section>
 
@@ -212,10 +179,10 @@
         </div>
         <div class="enlaces">
             <h3>Enlaces</h3>
-            <a href="index1.html">Inicio</a>
-            <a href="index2.html">Colecciones</a>
-            <a href="index3.html">Comprar</a>
-            <a href="index4.html">Nosotros</a>
+            <a href="index1.php">Inicio</a>
+            <a href="index2.php">Colecciones</a>
+            <a href="index3.php">Comprar</a>
+            <a href="index4.php">Nosotros</a>
         </div>
         <div>
             <h3>Contacto</h3>
@@ -233,4 +200,5 @@
         </div>
     </footer>
 </body>
+
 </html>
