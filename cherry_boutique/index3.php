@@ -1,3 +1,23 @@
+<?php session_start()
+/*include "./php/conexion.php";*/
+/*include "./php/seguridad.php";*/
+/*requerirLogin();*/
+?>
+<?php
+$dc = ['NOMBRE' => $_SESSION['userData']['name'], 'AP_PATERNO' => '', 'TELEFONO' => '', 'EMAIL' => $_SESSION['userData']['email'], 'DIRECCION' => ''];
+if ($_SESSION['userData']['id_cliente']) {
+    $st = $conexion->prepare("SELECT C.* FROM USUARIOS u JOIN CLIENTES c ON c.ID_CLIENTE = u.ID_CLIENTE WHERE u.ID_USUARIO =?");
+    $uid = (int) $_SESSION['userData']['id'];
+    $st->bind_param("i", $uid);
+    $st->execute();
+    $r = $st->get_result()->fetch_assoc();
+    if ($r) {
+        $dc = $r;
+    }
+}
+$rm = $conexion->query("SELECT * FROM METODO_PAGO ORDER BY ID_METODO");
+$iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colums', 3 => 'fa-solid fa-money-bill', 4 => 'fa-brands fa-paypal', 5 => 'fa-solid fa-wallet'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,17 +41,25 @@
         <div class="menu">
             <nav>
                 <ul class="menu2">
-                    <li class="m1"><a href="index1.html">Inicio</a></li>
-                    <li class="m1"><a href="index2.html">Colecciones</a></li>
-                    <li class="rosa m1"><a href="index3.html">Comprar</a></li>
-                    <li class="m1"><a href="index4.html">Nosotros</a></li>
+                    <li class="m1"><a href="index1.php">Inicio</a></li>
+                    <li class="m1"><a href="index2.php">Colecciones</a></li>
+                    <li class="rosa m1"><a href="index3.php">Comprar</a></li>
+                    <li class="m1"><a href="index4.php">Nosotros</a></li>
                 </ul>
             </nav>
         </div>
         <div class="iconos">
-            <a href="index2.html"><i class="fa fa-magnifying-glass ic"></i></a>
-            <a href="index2.html"><i class="fa fa-heart ic"></i></a>
-            <a href="index3.html"><i class="fa fa-bag-shopping ic"></i></a>
+            <a href="index2.php"><i class="fa fa-magnifying-glass ic"></i></a>
+            <a href="index2.php"><i class="fa fa-heart ic"></i></a>
+            <a href="index3.php"><i class="fa fa-bag-shopping ic"></i></a>
+            <?php if (estaLogeado()) { ?>
+                <a href="dash.php" aria-label="Mi cuenta" titule="<?php echo e($_SESSION['userData']['name']); ?>"><i
+                        class="fa fa-user ic"></i></a>
+                <a href="php/logout.php" aria-label="Cerrar sesión" title="Cerrar sesión"><i
+                        class="fa fa-right-from-bracket ic"></i></a>
+            <?php } else { ?>
+                <a href="login.php" aria-label="Iniciar sesión" title="Iniciar sesión"><i class="fa fa-user ic"></i></a>
+            <?php } ?>
         </div>
     </header>
     <section id="hero">
@@ -67,13 +95,14 @@
         <section class="formulario">
             <h2>Datos de envío</h2>
             <div class="grid-2">
-                <input type="text" placeholder="Nombre completo">
-                <input type="text" placeholder="Teléfono">
+                <input type="text" placeholder="Nombre completo"
+                    value="<?php echo e(trim($dc['NOMBRE'] . ' ' . $dc['AP_PATERNO'])); ?>">
+                <input type="text" placeholder="Teléfono" value="<?php echo e($dc['TELEFONO']); ?>">
             </div>
-            <input type="text" placeholder="Correo electrónico">
+            <input type="text" placeholder="Correo electrónico" value="<?php echo e($dc['EMAIL']); ?>">
             <h3>Dirección de envío</h3>
             <div class="grid-2">
-                <input type="text" placeholder="Calle y número">
+                <input type="text" placeholder="Calle y número" value="<?php echo e($dc['DIRECCION']); ?>">
                 <input type="text" placeholder="Colonia">
             </div>
             <div class="grid-3">
@@ -115,18 +144,12 @@
                     </div>
                 </div>
                 <div class="opciones">
-                    <div class="opcion-card">
-                        <i class="fa-regular fa-credit-card"></i>
-                        Tarjeta de crédito o débito
-                    </div>
-                    <div class="opcion-card">
-                        <i class="fa-solid fa-building-columns"></i>
-                        Transferencia bancaria
-                    </div>
-                    <div class="opcion-card">
-                        <i class="fa-solid fa-money-bill"></i>
-                        Pago en efectivo
-                    </div>
+                    <?php while ($m = $rm->fetch_assoc()) { ?>
+                        <div class="opcion-card">
+                            <i class="<?php echo $iconoPago[$m['ID_METODO']] ?? 'fa-solid fa-money-bill'; ?>"></i>
+                            <?php echo e($m['NOMBRE_METODO']); ?>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="cupon">
                     <i class="fa-solid fa-ticket"></i>
@@ -152,7 +175,8 @@
                         <h4>Bolsa bandolera</h4>
                         <p>Color: <span class="color" style="background:#000"></span></p>
                         <p class="precio">$649.00 MXN</p>
-                        <div class="cantidad"><button type="button">-</button><span>1</span><button type="button">+</button></div>
+                        <div class="cantidad"><button type="button">-</button><span>1</span><button
+                                type="button">+</button></div>
                     </div>
                 </div>
 
@@ -163,7 +187,8 @@
                         <p>Color: <span class="color" style="background: #fff;"></span></p>
                         <p>Talla: 24</p>
                         <p class="precio">$799.00 MXN</p>
-                        <div class="cantidad"><button type="button">-</button><span>1</span><button type="button">+</button></div>
+                        <div class="cantidad"><button type="button">-</button><span>1</span><button
+                                type="button">+</button></div>
                     </div>
                 </div>
                 <div class="producto">
@@ -174,10 +199,12 @@
                         <p>Talla: M</p>
                         <p class="precio">$399.00 MXN</p>
 
-                        <div class="cantidad"><button type="button">-</button><span>1</span><button type="button">+</button></div></div>
+                        <div class="cantidad"><button type="button">-</button><span>1</span><button
+                                type="button">+</button></div>
+                    </div>
                 </div>
                 <div class="seguir">
-                    <a href="index2.html"><i class="fa fa-solid fa-arrow-left"></i> Seguir comprando</a>
+                    <a href="index2.php"><i class="fa fa-solid fa-arrow-left"></i> Seguir comprando</a>
                 </div>
             </section>
 
@@ -243,10 +270,10 @@
         </div>
         <div class="enlaces">
             <h3>Enlaces</h3>
-            <a href="index1.html">Inicio</a>
-            <a href="index2.html">Colecciones</a>
-            <a href="index3.html">Comprar</a>
-            <a href="index4.html">Nosotros</a>
+            <a href="index1.php">Inicio</a>
+            <a href="index2.php">Colecciones</a>
+            <a href="index3.php">Comprar</a>
+            <a href="index4.php">Nosotros</a>
         </div>
         <div>
             <h3>Contacto</h3>
