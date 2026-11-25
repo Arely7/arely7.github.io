@@ -1,12 +1,12 @@
-<?php session_start()
-/*include "./php/conexion.php";*/
-/*include "./php/seguridad.php";*/
-/*requerirLogin();*/
+<?php session_start();
+include "./php/conexion.php";
+include "./php/seguridad.php";
+requerirLogin();
 ?>
 <?php
 $dc = ['NOMBRE' => $_SESSION['userData']['name'], 'AP_PATERNO' => '', 'TELEFONO' => '', 'EMAIL' => $_SESSION['userData']['email'], 'DIRECCION' => ''];
 if ($_SESSION['userData']['id_cliente']) {
-    $st = $conexion->prepare("SELECT C.* FROM USUARIOS u JOIN CLIENTES c ON c.ID_CLIENTE = u.ID_CLIENTE WHERE u.ID_USUARIO =?");
+    $st = $conexion->prepare("SELECT c.* FROM USUARIOS u JOIN CLIENTES c ON c.ID_CLIENTE = u.ID_CLIENTE WHERE u.ID_USUARIO = ?");
     $uid = (int) $_SESSION['userData']['id'];
     $st->bind_param("i", $uid);
     $st->execute();
@@ -16,7 +16,7 @@ if ($_SESSION['userData']['id_cliente']) {
     }
 }
 $rm = $conexion->query("SELECT * FROM METODO_PAGO ORDER BY ID_METODO");
-$iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colums', 3 => 'fa-solid fa-money-bill', 4 => 'fa-brands fa-paypal', 5 => 'fa-solid fa-wallet'];
+$iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-columns', 3 => 'fa-solid fa-money-bill', 4 => 'fa-brands fa-paypal', 5 => 'fa-solid fa-wallet'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,6 +30,7 @@ $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colum
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/media_querys.css">
+    <link rel="stylesheet" href="./css/extra.css">
 </head>
 
 <body>
@@ -52,8 +53,8 @@ $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colum
             <a href="index2.php"><i class="fa fa-magnifying-glass ic"></i></a>
             <a href="index2.php"><i class="fa fa-heart ic"></i></a>
             <a href="index3.php"><i class="fa fa-bag-shopping ic"></i></a>
-            <?php if (estaLogeado()) { ?>
-                <a href="dash.php" aria-label="Mi cuenta" titule="<?php echo e($_SESSION['userData']['name']); ?>"><i
+            <?php if (estaLogueado()) { ?>
+                <a href="dash.php" aria-label="Mi cuenta" title="<?php echo e($_SESSION['userData']['name']); ?>"><i
                         class="fa fa-user ic"></i></a>
                 <a href="php/logout.php" aria-label="Cerrar sesión" title="Cerrar sesión"><i
                         class="fa fa-right-from-bracket ic"></i></a>
@@ -179,7 +180,6 @@ $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colum
                                 type="button">+</button></div>
                     </div>
                 </div>
-
                 <div class="producto">
                     <img src="img/Tenis2.png" alt="Tenis clásicos">
                     <div class="producto-info">
@@ -198,7 +198,6 @@ $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colum
                         <p>Color: <span class="color" style="background: #F113A3;"></span></p>
                         <p>Talla: M</p>
                         <p class="precio">$399.00 MXN</p>
-
                         <div class="cantidad"><button type="button">-</button><span>1</span><button
                                 type="button">+</button></div>
                     </div>
@@ -207,7 +206,6 @@ $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colum
                     <a href="index2.php"><i class="fa fa-solid fa-arrow-left"></i> Seguir comprando</a>
                 </div>
             </section>
-
             <aside class="resumen">
                 <h2>Resumen de pedido</h2>
                 <div class="item-resumen">
@@ -234,9 +232,7 @@ $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colum
                     </div>
                     <span>1</span>
                 </div>
-
                 <hr>
-
                 <div class="totales">
                     <p>Subtotal: $1,847.00 MXN</p>
                     <p>Envío: $99.00 MXN</p>
@@ -249,7 +245,6 @@ $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colum
             </aside>
         </div>
     </main>
-
     <section class="success">
         <div class="check">
             <i class="fa-solid fa-check"></i>
