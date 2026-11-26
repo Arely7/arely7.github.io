@@ -235,8 +235,8 @@ include "./php/seguridad.php";
             $nProductos = $conexion->query("SELECT COUNT(*) FROM PRODUCTOS")->fetch_row()[0];
             $nCats = $conexion->query("SELECT COUNT(*) FROM CATEGORIAS")->fetch_row()[0];
             ?>
-            <p class="reg"><b><?php echo $nClientas; ?></b>clientas ya forman parte de la comunidad ·
-                <b><?php echo $nProductos; ?></b>productos en <b> <?php echo $nCats; ?></b> categorías</p>
+            <p class="reg"><b><?php echo $nClientas; ?></b> clientas ya forman parte de la comunidad ·
+                <b><?php echo $nProductos; ?></b> productos en <b> <?php echo $nCats; ?></b> categorías</p>
             <?php if (estaLogueado()) { ?>
                 <a href="registro.php" class="btnunir"><span class="blanco">Crear mi cuenta</span><i
                         class="fa fa-arrow-right blanco"></i></a>

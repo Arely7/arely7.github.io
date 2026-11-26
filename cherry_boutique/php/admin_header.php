@@ -1,5 +1,5 @@
 <?php
-// Cabecera común del panel (dash.php y /admin/*). Antes de incluirla define $ini y $tituloPagina.
+// Cabecera común del panel (dash.php y /admin/*). Require $ini y $tituloPagina.
 $base = raizSitio();
 function activo($n){ global $ini; return $ini === $n ? 'activo' : ''; }
 ?>
