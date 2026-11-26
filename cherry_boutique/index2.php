@@ -87,7 +87,7 @@ $total = $res->num_rows;
                 <form method="GET" id="formcat">
                     <?php
                     $catSel = isset($_GET['cat']) && is_array($_GET['cat']) ? array_map('intval', $_GET['cat']) : [];
-                    $rc = $conexion->query("SELECT ID_CATEGORIA, NOMBRE_CATEGORIA FROM CATEGORIAS WHERE ID_CATEGORIA <= 4 ORBER BY ID_CATEGORIA");
+                    $rc = $conexion->query("SELECT ID_CATEGORIA, NOMBRE_CATEGORIA FROM CATEGORIAS WHERE ID_CATEGORIA <= 4 ORDER BY ID_CATEGORIA");
                     while ($c = $rc->fetch_assoc()) { ?>
                         <label><input type="checkbox" name="cat[]" value="<?php echo $c['ID_CATEGORIA']; ?>" <?php echo in_array((int) $c['ID_CATEGORIA'], $catSel) ? 'checked' : ";" ?>
                                 onchange="document.getElementById('formcat').submit()"><?php echo e($c['NOMBRE_CATEGORIA']); ?></label>
