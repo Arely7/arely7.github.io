@@ -1,6 +1,6 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+use src\PHPMailer;
+use src\Exception;
 
 function enviarCorreoLogin($destino, $nombre)
 {
