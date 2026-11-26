@@ -15,7 +15,7 @@ if (isset($_SESSION['userData'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/styles.css">
-    /* */
+    <link rel="stylesheet" href="./css/extra.css">
 </head>
 
 <body class="auth-page">
