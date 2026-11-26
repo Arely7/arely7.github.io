@@ -134,7 +134,7 @@ INSERT INTO USUARIOS (NOMBRE,EMAIL,PASSWORD,ROL,ID_CLIENTE) VALUES
  ('Administradora Cherry','admin@cherry.com',SHA2('12345',256),'admin',NULL),
  ('Sofía García','sofi.gaoc@gmail.com',SHA2('1234',256),'cliente',1);
 
------------DISPARADORES-----------
+/*-----------DISPARADORES-----------*/
 /*Al agregar un detalle de pedido se descuenta la existencia del producto*/
 CREATE TRIGGER trg_detalle_descuenta_stock AFTER INSERT ON DETALLES_PEDIDO
 FOR EACH ROW
