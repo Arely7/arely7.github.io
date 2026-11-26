@@ -42,7 +42,7 @@ $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colum
         <div class="menu">
             <nav>
                 <ul class="menu2">
-                    <li class="m1"><a href="index1.php">Inicio</a></li>
+                    <li class="m1"><a href="index.php">Inicio</a></li>
                     <li class="m1"><a href="index2.php">Colecciones</a></li>
                     <li class="rosa m1"><a href="index3.php">Comprar</a></li>
                     <li class="m1"><a href="index4.php">Nosotros</a></li>
@@ -265,7 +265,7 @@ $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-colum
         </div>
         <div class="enlaces">
             <h3>Enlaces</h3>
-            <a href="index1.php">Inicio</a>
+            <a href="index.php">Inicio</a>
             <a href="index2.php">Colecciones</a>
             <a href="index3.php">Comprar</a>
             <a href="index4.php">Nosotros</a>

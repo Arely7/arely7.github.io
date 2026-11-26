@@ -45,7 +45,7 @@ if (isset($_SESSION['userData'])) {
             <button type="submit" class="btn-auth">Entrar</button>
         </form>
         <p class="auth-pie">¿Aún no eres parte de Cherry Club? <a href="registro.php">Regístrate</a></p>
-        <p class="auth-pie"><a href="index1.php"><i class="fa fa-arrow-left"></i>Volver al sitio</a></p>
+        <p class="auth-pie"><a href="index.php"><i class="fa fa-arrow-left"></i>Volver al sitio</a></p>
     </div>
 </body>
 

@@ -17,7 +17,7 @@ include "./php/funciones.php";
 
 <body class="auth-page">
     <div class="auth-box ancho">
-        <a href="index1.php" class="auth-logo">
+        <a href="index.php" class="auth-logo">
             <h2 class="cherry rosa">Cherry</h2>
             <h4 class="boutique">BOUTIQUE</h4>
         </a>

@@ -40,7 +40,7 @@ $total = $res->num_rows;
         <div class="menu">
             <nav>
                 <ul class="menu2">
-                    <li class="m1"><a href="index1.php">Inicio</a></li>
+                    <li class="m1"><a href="index.php">Inicio</a></li>
                     <li class="rosa m1"><a href="index2.php">Colecciones</a></li>
                     <li class="m1"><a href="index3.php">Comprar</a></li>
                     <li class="m1"><a href="index4.php">Nosotros</a></li>
@@ -155,7 +155,7 @@ $total = $res->num_rows;
                             <span class="<?php echo claseColor($p['COLOR']); ?>"></span>
                         </div>
                         <p class="tallas">
-                            <?php echo (strtolower($p['TALLA']) === 'unica' || $p['TALLA'] === '') ? '&nbps;' : 'Talla:' . e($p['TALLA']); ?>
+                            <?php echo (strtolower((string)$p['TALLA']) === 'unica' || empty($p['TALLA'])) ? 'Talla: Única' : 'Talla: ' . e($p['TALLA']); ?>
                         </p>
                         <button class="btn" type="button" onclick="location='index3.php'">Agregar al carrito</button>
                     </div>
@@ -204,7 +204,7 @@ $total = $res->num_rows;
         </div>
         <div class="enlaces">
             <h3>Enlaces</h3>
-            <a href="index1.php">Inicio</a>
+            <a href="index.php">Inicio</a>
             <a href="index2.php">Colecciones</a>
             <a href="index3.php">Comprar</a>
             <a href="index4.php">Nosotros</a>

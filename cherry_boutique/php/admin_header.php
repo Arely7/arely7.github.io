@@ -15,7 +15,7 @@ function activo($n){ global $ini; return $ini === $n ? 'activo' : ''; }
 </head>
 <body class="adm">
 <header class="adm-head">
-  <a href="<?php echo $base; ?>/index1.php" class="titulo">
+  <a href="<?php echo $base; ?>/index.php" class="titulo">
     <h2 class="cherry rosa">Cherry</h2><h4 class="boutique">BOUTIQUE</h4>
   </a>
   <nav class="adm-nav">
@@ -26,7 +26,7 @@ function activo($n){ global $ini; return $ini === $n ? 'activo' : ''; }
     <a class="<?php echo activo('clientes'); ?>"   href="<?php echo $base; ?>/admin/clientes.php">Clientas</a>
     <a class="<?php echo activo('pedidos'); ?>"    href="<?php echo $base; ?>/admin/pedidos.php">Pedidos</a>
     <?php } ?>
-    <a href="<?php echo $base; ?>/index1.php">Ver sitio</a>
+    <a href="<?php echo $base; ?>/index.php">Ver sitio</a>
     <a href="<?php echo $base; ?>/php/logout.php" class="salir"><i class="fa fa-right-from-bracket"></i> Salir</a>
   </nav>
 </header>
