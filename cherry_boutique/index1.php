@@ -15,7 +15,7 @@ include "./php/seguridad.php";
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/media_querys.css">
-    /* */
+    <link rel="stylesheet" href="./css/extra.css">
     <title>Inicio</title>
 </head>
 
