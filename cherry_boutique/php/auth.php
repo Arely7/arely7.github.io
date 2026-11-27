@@ -7,7 +7,7 @@ if(isset($_POST['txtEmail']) && isset($_POST['txtPassword']) && $_POST['txtEmail
     $email = trim($_POST['txtEmail']);
     $hash  = hash('sha256', $_POST['txtPassword']);
 
-    $stmt = $conexion->prepare("SELECT ID_USUARIO, NOMBRE, EMAIL, ROL, ID_CLIENTE FROM USUARIOS WHERE EMAIL = ? AND PASSWORD = ?");
+    $stmt = $conexion->prepare("SELECT ID_USUARIO, NOMBRE, EMAIL, ROL, ID_CLIENTE FROM usuarios WHERE EMAIL = ? AND PASSWORD = ?");
     $stmt->bind_param("ss", $email, $hash);
     $stmt->execute();
     $res = $stmt->get_result();

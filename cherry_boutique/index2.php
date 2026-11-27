@@ -6,7 +6,7 @@ include "./php/seguridad.php";
 $orden = $_GET['orden'] ?? 'nuevo';
 $orderSql = ['nuevo' => 'p.ID_PRODUCTO DESC', 'asc' => 'p.PRECIO ASC', 'desc' => 'p.PRECIO DESC'][$orden] ?? 'p.ID_PRODUCTO DESC';
 $catSel = isset($_GET['cat']) && is_array($_GET['cat']) ? array_map('intval', $_GET['cat']) : [];
-$sql = "SELECT p.*, c.NOMBRE_CATEGORIA FROM PRODUCTOS p JOIN CATEGORIAS c ON c.ID_CATEGORIA = p.ID_CATEGORIA";
+$sql = "SELECT p.*, c.NOMBRE_CATEGORIA FROM productos p JOIN categorias c ON c.ID_CATEGORIA = p.ID_CATEGORIA";
 if (count($catSel) > 0) {
     $sql .= " WHERE p.ID_CATEGORIA IN (" . implode(',', $catSel) . ")";
 }
@@ -87,7 +87,7 @@ $total = $res->num_rows;
                 <form method="GET" id="formcat">
                     <?php
                     $catSel = isset($_GET['cat']) && is_array($_GET['cat']) ? array_map('intval', $_GET['cat']) : [];
-                    $rc = $conexion->query("SELECT ID_CATEGORIA, NOMBRE_CATEGORIA FROM CATEGORIAS WHERE ID_CATEGORIA <= 4 ORDER BY ID_CATEGORIA");
+                    $rc = $conexion->query("SELECT ID_CATEGORIA, NOMBRE_CATEGORIA FROM categorias WHERE ID_CATEGORIA <= 4 ORDER BY ID_CATEGORIA");
                     while ($c = $rc->fetch_assoc()) { ?>
                         <label><input type="checkbox" name="cat[]" value="<?php echo $c['ID_CATEGORIA']; ?>" <?php echo in_array((int) $c['ID_CATEGORIA'], $catSel) ? 'checked' : ";" ?>
                                 onchange="document.getElementById('formcat').submit()"><?php echo e($c['NOMBRE_CATEGORIA']); ?></label>
