@@ -1,8 +1,8 @@
 <?php
-$servidor = "mysql-cherryboutique.alwaysdata.net";
-$nombreBD = "cherryboutique_cherry_boutique";
-$user     = "cherryboutique";
-$password = "cherry123.@";
+$servidor = "127.0.0.1";
+$nombreBD = "cherry_boutique";
+$user     = "root";
+$password = "";
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
