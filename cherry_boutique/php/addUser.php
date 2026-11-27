@@ -29,7 +29,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // ¿ya existe el correo?
-$s = $conexion->prepare("SELECT 1 FROM USUARIOS WHERE EMAIL = ?");
+$s = $conexion->prepare("SELECT 1 FROM usuarios WHERE EMAIL = ?");
 $s->bind_param("s", $email);
 $s->execute();
 if ($s->get_result()->num_rows > 0) {
@@ -42,14 +42,14 @@ $hash = hash('sha256', $_POST['txtPassword']);
 $conexion->begin_transaction();
 try {
     // INSERT en CLIENTES (el disparador trg_cliente_nuevo escribe en la bitácora)
-    $c = $conexion->prepare("INSERT INTO CLIENTES (NOMBRE,AP_PATERNO,AP_MATERNO,EMAIL,TELEFONO,DIRECCION,FECHA_REGISTRO) VALUES (?,?,?,?,?,?,CURDATE())");
+    $c = $conexion->prepare("INSERT INTO clientes (NOMBRE,AP_PATERNO,AP_MATERNO,EMAIL,TELEFONO,DIRECCION,FECHA_REGISTRO) VALUES (?,?,?,?,?,?,CURDATE())");
     $c->bind_param("ssssss", $nombre, $paterno, $materno, $email, $tel, $dir);
     $c->execute();
     $idCliente = $conexion->insert_id;
 
     // INSERT en USUARIOS
     $nombreCompleto = $nombre . ' ' . $paterno;
-    $u = $conexion->prepare("INSERT INTO USUARIOS (NOMBRE,EMAIL,PASSWORD,ROL,ID_CLIENTE) VALUES (?,?,?,'cliente',?)");
+    $u = $conexion->prepare("INSERT INTO usuarios (NOMBRE,EMAIL,PASSWORD,ROL,ID_CLIENTE) VALUES (?,?,?,'cliente',?)");
     $u->bind_param("sssi", $nombreCompleto, $email, $hash, $idCliente);
     $u->execute();
     $conexion->commit();
