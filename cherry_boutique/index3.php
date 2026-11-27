@@ -6,7 +6,7 @@ requerirLogin();
 <?php
 $dc = ['NOMBRE' => $_SESSION['userData']['name'], 'AP_PATERNO' => '', 'TELEFONO' => '', 'EMAIL' => $_SESSION['userData']['email'], 'DIRECCION' => ''];
 if ($_SESSION['userData']['id_cliente']) {
-    $st = $conexion->prepare("SELECT c.* FROM USUARIOS u JOIN CLIENTES c ON c.ID_CLIENTE = u.ID_CLIENTE WHERE u.ID_USUARIO = ?");
+    $st = $conexion->prepare("SELECT c.* FROM usuarios u JOIN clientes c ON c.ID_CLIENTE = u.ID_CLIENTE WHERE u.ID_USUARIO = ?");
     $uid = (int) $_SESSION['userData']['id'];
     $st->bind_param("i", $uid);
     $st->execute();
@@ -15,7 +15,7 @@ if ($_SESSION['userData']['id_cliente']) {
         $dc = $r;
     }
 }
-$rm = $conexion->query("SELECT * FROM METODO_PAGO ORDER BY ID_METODO");
+$rm = $conexion->query("SELECT * FROM metodo_pago ORDER BY ID_METODO");
 $iconoPago = [1 => 'fa-regular fa-credit-card', 2 => 'fa-solid fa-building-columns', 3 => 'fa-solid fa-money-bill', 4 => 'fa-brands fa-paypal', 5 => 'fa-solid fa-wallet'];
 ?>
 <!DOCTYPE html>

@@ -231,9 +231,9 @@ include "./php/seguridad.php";
             <h2 class="ua">¡Únete ahora!</h2>
             <p class="reg">Regístrate en Cherry Club y comienza a disfrutar todos los beneficios.</p>
             <?php
-            $nClientas = $conexion->query("SELECT COUNT(*) FROM CLIENTES")->fetch_row()[0];
-            $nProductos = $conexion->query("SELECT COUNT(*) FROM PRODUCTOS")->fetch_row()[0];
-            $nCats = $conexion->query("SELECT COUNT(*) FROM CATEGORIAS")->fetch_row()[0];
+            $nClientas = $conexion->query("SELECT COUNT(*) FROM clientes")->fetch_row()[0];
+            $nProductos = $conexion->query("SELECT COUNT(*) FROM productos")->fetch_row()[0];
+            $nCats = $conexion->query("SELECT COUNT(*) FROM categorias")->fetch_row()[0];
             ?>
             <p class="reg"><b><?php echo $nClientas; ?></b> clientas ya forman parte de la comunidad ·
                 <b><?php echo $nProductos; ?></b> productos en <b> <?php echo $nCats; ?></b> categorías</p>

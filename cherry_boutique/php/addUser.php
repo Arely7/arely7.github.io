@@ -29,7 +29,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // ¿ya existe el correo?
-$s = $conexion->prepare("SELECT 1 FROM USUARIOS WHERE EMAIL = ?");
+$s = $conexion->prepare("SELECT 1 FROM usuarios WHERE EMAIL = ?");
 $s->bind_param("s", $email);
 $s->execute();
 if ($s->get_result()->num_rows > 0) {

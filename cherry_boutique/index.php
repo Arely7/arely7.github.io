@@ -77,7 +77,7 @@ include "./php/seguridad.php";
         <div class="gcat">
             <?php
             $imgCat = [1 => 'blu1.png', 2 => 'te1.png', 3 => 'bol1.png', 4 => 'acc1.png'];
-            $rc = $conexion->query("SELECT ID_CATEGORIA, NOMBRE_CATEGORIA FROM CATEGORIAS WHERE ID_CATEGORIA <= 4 ORDER BY ID_CATEGORIA");
+            $rc = $conexion->query("SELECT ID_CATEGORIA, NOMBRE_CATEGORIA FROM categorias WHERE ID_CATEGORIA <= 4 ORDER BY ID_CATEGORIA");
             while ($c = $rc->fetch_assoc()) { ?>
                 <a href="index2.php?cat[]=<?php echo $c['ID_CATEGORIA']; ?>" class="catcarta">
                     <div class="circat">
@@ -101,7 +101,7 @@ include "./php/seguridad.php";
 
         <div class="gdest">
             <?php
-            $rd = $conexion->query("SELECT * FROM PRODUCTOS WHERE DESTACADO = 1 ORDER BY ID_PRODUCTO LIMIT 4");
+            $rd = $conexion->query("SELECT * FROM productos WHERE DESTACADO = 1 ORDER BY ID_PRODUCTO LIMIT 4");
             while ($p = $rd->fetch_assoc()) { ?>
                 <div class="prodcard">
                     <i class="fa-regular fa-heart cz"></i>
